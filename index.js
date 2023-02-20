@@ -3,7 +3,14 @@ const { connection } = require("./configs/db");
 const { userRouter } = require("./routes/User.routes");
 const { postRouter } = require("./routes/Post.routes");
 const { authenticate } = require("./Middlewares/authenticate.middleware");
+const cors = require("cors");
 require("dotenv").config();
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 const app = express();
 
